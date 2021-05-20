@@ -21,3 +21,7 @@ Route::get('/', function () {
 Route::resource('posts', PostsController::class);
 // Route::delete('posts/{posts}', 'PostsController@destroy')->name('posts.destroy');
 // Route::delete('posts/{posts}', 'PostsController@destroy')->name('posts.destroy');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
