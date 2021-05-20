@@ -55,7 +55,7 @@ class PostsController extends Controller
      * @param  \App\Models\Posts  $posts
      * @return \Illuminate\Http\Response
      */
-    public function show(Posts $posts)
+    public function show(Posts $post)
     {
         return view('posts.show', compact('post'));
     }
@@ -66,9 +66,10 @@ class PostsController extends Controller
      * @param  \App\Models\Posts  $posts
      * @return \Illuminate\Http\Response
      */
-    public function edit(Posts $posts)
+    public function edit(Posts $post)
     {
-        return view('psots.edit', compact('psot'));
+
+        return view('posts.edit', compact('post'));
     }
 
     /**
@@ -78,14 +79,13 @@ class PostsController extends Controller
      * @param  \App\Models\Posts  $posts
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Posts $posts)
+    public function update(Request $request, Posts $post)
     {
         $request->validate([
             'title'=>"required",
             "body"=>"required",
-
         ]);
-
+        $post->update($request->all());
         return redirect()->route('posts.index')
         ->with('success', 'Post updated successfully');
     }
