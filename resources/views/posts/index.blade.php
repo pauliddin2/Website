@@ -36,6 +36,7 @@
                     <a class="btn btn-info" href="{{ route('posts.show', $value->id) }}">Show</a>
                     <a class="btn btn-primary" href="{{ route('posts.edit', $value->id) }}">Edit</a>
                     @crlf
+
                     @method('DELETE')
                     <button type="submit" class="btn btn-danger">Delete</button>
                 </form>
