@@ -13,19 +13,20 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Auth::routes();
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
+Route::get('/contact', function () {
+    return view('pages.contact');
+});
+Route::get('/about', function () {
+    return view('pages.about');
+});
+Route::get('/blog', [PostsController::class, 'posts']);
 
 Route::resource('posts', PostsController::class);
 // Route::delete('posts/{posts}', 'PostsController@destroy')->name('posts.destroy');
 // Route::delete('posts/{posts}', 'PostsController@destroy')->name('posts.destroy');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

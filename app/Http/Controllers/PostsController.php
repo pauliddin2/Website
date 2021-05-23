@@ -9,13 +9,28 @@ use Illuminate\Routing\RedirectController;
 class PostsController extends Controller
 {
     /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    public function posts()
+    {
+        $data = Posts::latest()->paginate(10);
+        return view('pages.posts', compact('data'))
+        ->with('i', (request()->input('page', 1) - 1) * 5);
+    }
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $data = Posts::latest()->paginate(5);
+        $data = Posts::latest()->paginate(10);
         return view('posts.index', compact('data'))
         ->with('i', (request()->input('page', 1) - 1) * 5);
     }

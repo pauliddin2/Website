@@ -1,10 +1,10 @@
-<footer style="color: var(--dark);background: var(--white);">
+<footer class="page-footer font-small blue pt-4" style="color: var(--dark);background: var(--white);">
     <div class="container" id="footerinfo">
         <div class="row" style="height: 102px;">
             <div class="col">
                 <p class="text-left"
                     style="margin-top: 28px;font-family: 'Open Sans', sans-serif;font-weight: 300;font-size: 14px;">
-                    TecnoNews, Taskent, Uzbekistan<br /></p>
+                    TecnoNews, Tashkent, Uzbekistan<br /></p>
             </div>
             <div class="col"><a href="https://mx.linkedin.com/" target="_blank"><i class="fa fa-linkedin"
                         style="font-size: 22px;letter-spacing: 13px;"></i></a><a href="" target="_blank"><i

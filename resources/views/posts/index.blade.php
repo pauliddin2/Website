@@ -1,4 +1,4 @@
-@extends('posts.layout')
+@extends('layouts.app')
 
 @section('content')
     <div class="row" style="margin-top: 5em;">
@@ -46,5 +46,5 @@
         </tr>
         @endforeach
     </table>
-    { !! $data->links('pagination::bootstrap-4') !! }
+    {!! $data->links('pagination::bootstrap-4')!! }}
 @endsection
