@@ -96,10 +96,10 @@ class PostsController extends Controller
      * @param  \App\Models\Posts  $posts
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Posts $posts)
+    public function destroy(Posts $post)
     {
-        $posts->delete();
-        return redirect()->route('route.index')
+        $post->delete();
+        return redirect()->route('posts.index')
         ->with('success', 'Post deleted successfully');
     }
 }
